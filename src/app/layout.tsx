@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`font-sans bg-background text-foreground ${spaceGrotesk.variable} antialiased`}
+        className={`font-sans min-h-svh bg-background text-foreground ${spaceGrotesk.variable} antialiased`}
       >
         <ClientProviders>
           <Navbar />
