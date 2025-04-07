@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
-import "./globals.css";
+
+import { ClientProviders } from "../provider";
+import "../globals.css";
+import { Navbar } from "@/components/Navbar";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -22,7 +25,10 @@ export default function RootLayout({
       <body
         className={`font-sans bg-background text-foreground ${spaceGrotesk.variable} antialiased`}
       >
-        {children}
+        <ClientProviders>
+          <Navbar />
+          {children}
+        </ClientProviders>
       </body>
     </html>
   );
