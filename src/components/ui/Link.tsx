@@ -7,7 +7,7 @@ import {
 import { tv, VariantProps } from "tailwind-variants";
 
 const link = tv({
-  base: "cursor-pointer",
+  base: "cursor-pointer text-center",
   variants: {
     intent: {
       primary:
