@@ -19,7 +19,7 @@ const socialIcons = [
 export const Navbar = () => {
   return (
     <nav className="fixed left-1/2 -translate-x-1/2 top-5 inline-flex min-w-40 flex-col items-center gap-5">
-      <span className="text-2xl">Made_By_Kim</span>
+      <h1 className="text-2xl">Made_By_Kim</h1>
       <ul className="flex justify-between w-full">
         {socialIcons.map((item, index) => (
           <Link key={index} intent="icon" href={item.href} target="_blank">
