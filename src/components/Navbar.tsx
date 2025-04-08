@@ -23,6 +23,7 @@ export const Navbar = () => {
       className={twJoin([
         "absolute left-1/2 -translate-x-1/2 p-5 inline-flex min-w-40 flex-col items-center gap-5",
         "md:left-0 md:-translate-0 md:min-w-auto md:w-full md:flex-row md:justify-between",
+        "lg:max-w-5xl lg:left-1/2 lg:-translate-x-1/2",
       ])}
     >
       <h1 className="text-2xl">Made_By_Kim</h1>

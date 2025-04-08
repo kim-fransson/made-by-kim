@@ -12,7 +12,7 @@ export const ProfileImage = ({ className }: ProfileImageProps) => {
     <div
       className={twMerge(
         className,
-        "profile-img-gradient h-96 md:h-[600px] inline-flex items-end"
+        "md:bg-[#242424] bg-gradient-to-b to-[#242424] h-96 md:h-[600px] inline-flex items-end"
       )}
     >
       <Image
