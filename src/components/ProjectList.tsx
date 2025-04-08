@@ -10,7 +10,7 @@ export const ProjectList = () => {
       aria-label="My projects"
       selectionMode="none"
       items={projects}
-      className="grid gap-12"
+      className="grid gap-12 md:grid-cols-2"
     >
       {({ title, thumbnail, tags, website, github }) => (
         <GridItem id={title} textValue={title}>

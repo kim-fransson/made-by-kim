@@ -1,5 +1,6 @@
 import { SiFrontendmentor, SiGithub, SiLinkedin } from "react-icons/si";
 import { Link } from "./ui";
+import { twJoin } from "tailwind-merge";
 
 const socialIcons = [
   {
@@ -18,9 +19,14 @@ const socialIcons = [
 
 export const Navbar = () => {
   return (
-    <nav className="absolute left-1/2 -translate-x-1/2 top-5 inline-flex min-w-40 flex-col items-center gap-5">
+    <nav
+      className={twJoin([
+        "absolute left-1/2 -translate-x-1/2 p-5 inline-flex min-w-40 flex-col items-center gap-5",
+        "md:left-0 md:-translate-0 md:min-w-auto md:w-full md:flex-row md:justify-between",
+      ])}
+    >
       <h1 className="text-2xl">Made_By_Kim</h1>
-      <ul className="flex justify-between w-full">
+      <ul className="flex justify-between w-full md:justify-end gap-4">
         {socialIcons.map((item, index) => (
           <Link key={index} intent="icon" href={item.href} target="_blank">
             {item.icon}
