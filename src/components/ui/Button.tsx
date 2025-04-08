@@ -7,10 +7,10 @@ import {
 import { tv, VariantProps } from "tailwind-variants";
 
 const button = tv({
-  base: "h-9 uppercase tracking-widest font-bold cursor-pointer text-lg",
+  base: "",
   variants: {
     intent: {
-      primary: ["pb-4 border-b-2 border-primary"],
+      primary: [""],
     },
   },
   defaultVariants: {

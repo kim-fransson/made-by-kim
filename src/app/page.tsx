@@ -1,9 +1,10 @@
 import { ProfileImage } from "@/components/ProfileImage";
-import { Button, Separator } from "@/components/ui";
+import { ProjectList } from "@/components/ProjectList";
+import { Separator } from "@/components/ui";
 
 export default function Home() {
   return (
-    <div className="grid px-4 ">
+    <div className="grid px-4 pb-32">
       <section className="flex flex-col items-center">
         <ProfileImage />
         <h2 className="text-4xl font-bold text-balance text-center mt-8">
@@ -17,14 +18,13 @@ export default function Home() {
           Based in the Sweden, I&rsquo;m a front-end developer passionate about
           building accessible web apps that users love.
         </p>
-
-        <Button className="mt-6">RESUME</Button>
       </section>
 
       <Separator />
 
       <section>
-        <h2 className="text-4xl font-bold text-balance">Projects</h2>
+        <h2 className="text-4xl font-bold text-balance mb-12">Projects</h2>
+        <ProjectList />
       </section>
     </div>
   );

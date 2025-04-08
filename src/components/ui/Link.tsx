@@ -7,11 +7,16 @@ import {
 import { tv, VariantProps } from "tailwind-variants";
 
 const link = tv({
-  base: "",
+  base: "cursor-pointer",
   variants: {
     intent: {
+      primary:
+        "h-9 uppercase tracking-widest font-bold pb-4 border-b-2 border-primary",
       icon: ["p-2.5 rounded-full"],
     },
+  },
+  defaultVariants: {
+    intent: "primary",
   },
 });
 
