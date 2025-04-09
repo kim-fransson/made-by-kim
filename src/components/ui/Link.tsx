@@ -14,7 +14,8 @@ const link = tv({
   base: "cursor-pointer text-center -outline-offset-2 relative",
   variants: {
     intent: {
-      primary: "h-9 uppercase tracking-widest font-bold p-4",
+      primary:
+        "h-9 uppercase tracking-widest font-bold pointer-coarse:pb-2.5 pointer-coarse:px-0 p-4",
       icon: ["p-2.5 rounded-full"],
     },
   },
