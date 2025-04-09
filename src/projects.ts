@@ -1,3 +1,11 @@
+export type Project = {
+  title: string;
+  tags: string[];
+  website: string;
+  github: string;
+  thumbnail: string;
+};
+
 export const projects = [
   {
     title: "Pokédex",

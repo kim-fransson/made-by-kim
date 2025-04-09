@@ -1,5 +1,6 @@
 "use client";
 
+import { focusRing } from "@/utils/styles";
 import {
   Link as RACLink,
   LinkProps as RACLinkProps,
@@ -7,6 +8,7 @@ import {
 import { tv, VariantProps } from "tailwind-variants";
 
 const link = tv({
+  extend: focusRing,
   base: "cursor-pointer text-center",
   variants: {
     intent: {
@@ -28,7 +30,10 @@ interface LinkProps extends RACLinkProps, LinkVariants {
 
 export const Link = ({ children, intent, ...props }: LinkProps) => {
   return (
-    <RACLink {...props} className={link({ intent })}>
+    <RACLink
+      {...props}
+      className={(renderProps) => link({ intent, ...renderProps })}
+    >
       {children}
     </RACLink>
   );
