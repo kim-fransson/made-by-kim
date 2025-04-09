@@ -41,10 +41,10 @@ export const ProjectCard = ({ project, isFocused }: ProjectCardProps) => {
         ))}
       </ul>
       <div className="flex gap-8 lg:hidden">
-        <Link href={website} target="_blank">
+        <Link intent="primary" href={website} target="_blank">
           view project
         </Link>
-        <Link href={github} target="_blank">
+        <Link intent="primary" href={github} target="_blank">
           view code
         </Link>
       </div>
