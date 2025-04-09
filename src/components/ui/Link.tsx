@@ -1,8 +1,6 @@
 "use client";
 
 import { focusRing } from "@/utils/styles";
-import { motion } from "motion/react";
-import { useHover } from "react-aria";
 import {
   Link as RACLink,
   LinkProps as RACLinkProps,
@@ -11,11 +9,13 @@ import { tv, VariantProps } from "tailwind-variants";
 
 const link = tv({
   extend: focusRing,
-  base: "cursor-pointer text-center -outline-offset-2 relative",
+  base: "cursor-pointer text-center -outline-offset-2",
   variants: {
     intent: {
-      primary:
-        "h-9 uppercase tracking-widest font-bold pointer-coarse:pb-2.5 pointer-coarse:px-0 p-4",
+      primary: [
+        "uppercase tracking-widest font-bold pointer-coarse:pb-2.5 pointer-coarse:px-0 pointer-coarse:pt-0 p-4 border-b-2 border-primary",
+        "hover:text-primary transition-colors",
+      ],
       icon: ["p-2.5 rounded-full"],
     },
   },
@@ -31,44 +31,13 @@ interface LinkProps extends Omit<RACLinkProps, "children">, LinkVariants {
   children: React.ReactNode;
 }
 
-export const Link = (props: LinkProps) => {
-  return props.intent === "primary" ? (
-    <LinkWithBorder {...props} />
-  ) : (
+export const Link = ({ children, intent, ...props }: LinkProps) => {
+  return (
     <RACLink
       {...props}
-      className={(renderProps) =>
-        link({ intent: props.intent, ...renderProps })
-      }
-    />
-  );
-};
-
-const LinkWithBorder = ({ intent, children, ...props }: LinkProps) => {
-  const { isHovered, hoverProps } = useHover({});
-  return (
-    <span {...hoverProps}>
-      <RACLink
-        {...props}
-        className={(renderProps) => link({ intent, ...renderProps })}
-      >
-        <>
-          <motion.div
-            animate={{ height: isHovered ? "100%" : "2px" }}
-            className="w-full bg-primary absolute bottom-0"
-          ></motion.div>
-          <motion.span
-            animate={{
-              color: isHovered
-                ? "var(--color-foreground-primary)"
-                : "var(--color-foreground)",
-            }}
-            className="relative z-10"
-          >
-            {children}
-          </motion.span>
-        </>
-      </RACLink>
-    </span>
+      className={(renderProps) => link({ intent, ...renderProps })}
+    >
+      {children}
+    </RACLink>
   );
 };
