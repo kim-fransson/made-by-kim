@@ -38,7 +38,11 @@ export const Navbar = () => {
       <ul className="flex justify-between w-full md:justify-end gap-4">
         {socialIcons.map((item) => (
           <li className="flex" key={item.href}>
-            <TooltipTrigger delay={300} tooltip={item.tooltip}>
+            <TooltipTrigger
+              delay={300}
+              closeDelay={1000}
+              tooltip={item.tooltip}
+            >
               <Link intent="icon" href={item.href} target="_blank">
                 {item.icon}
                 <span className="sr-only">{item.srLabel}</span>
