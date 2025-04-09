@@ -71,13 +71,14 @@ const ButtonOverlay = ({ website, github, isOpen }: ButtonOverlayProps) => {
             exit={{ opacity: 0 }}
             className="lg:block absolute inset-0 bg-black"
           ></motion.div>
-          <div className="lg:flex absolute flex-col gap-12 hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="lg:flex absolute flex-col items-center gap-12 hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <MotionLink
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0 }}
               href={website}
               target="_blank"
+              intent="primary"
             >
               view project
             </MotionLink>
@@ -87,6 +88,7 @@ const ButtonOverlay = ({ website, github, isOpen }: ButtonOverlayProps) => {
               exit={{ opacity: 0 }}
               href={github}
               target="_blank"
+              intent="primary"
             >
               view code
             </MotionLink>
