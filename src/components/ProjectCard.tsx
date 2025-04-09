@@ -2,6 +2,7 @@ import { Project } from "@/projects";
 import Image from "next/image";
 import { Link } from "./ui";
 import { useHover } from "react-aria";
+import { AnimatePresence, motion } from "motion/react";
 
 interface ProjectCardProps {
   project: Project;
@@ -25,9 +26,11 @@ export const ProjectCard = ({ project, isFocused }: ProjectCardProps) => {
           src={thumbnail}
           className="object-cover w-[345px] h-[253px] lg:w-[540px] lg:h-[400px]"
         />
-        {showButtonOverlay && (
-          <ButtonOverlay website={website} github={github} />
-        )}
+        <ButtonOverlay
+          website={website}
+          github={github}
+          isOpen={showButtonOverlay}
+        />
       </div>
       <h3 className="text-3xl font-bold uppercase">{title}</h3>
       <ul className="flex gap-4">
@@ -52,19 +55,44 @@ export const ProjectCard = ({ project, isFocused }: ProjectCardProps) => {
 interface ButtonOverlayProps {
   website: string;
   github: string;
+  isOpen: boolean;
 }
-const ButtonOverlay = ({ website, github }: ButtonOverlayProps) => {
+
+const MotionLink = motion.create(Link);
+
+const ButtonOverlay = ({ website, github, isOpen }: ButtonOverlayProps) => {
   return (
-    <>
-      <div className="lg:block absolute inset-0 backdrop-blur-sm bg-black/50"></div>
-      <div className="lg:flex absolute flex-col gap-12 hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <Link href={website} target="_blank">
-          view project
-        </Link>
-        <Link href={github} target="_blank">
-          view code
-        </Link>
-      </div>
-    </>
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.75 }}
+            exit={{ opacity: 0 }}
+            className="lg:block absolute inset-0 bg-black"
+          ></motion.div>
+          <div className="lg:flex absolute flex-col gap-12 hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <MotionLink
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0 }}
+              href={website}
+              target="_blank"
+            >
+              view project
+            </MotionLink>
+            <MotionLink
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0 }}
+              href={github}
+              target="_blank"
+            >
+              view code
+            </MotionLink>
+          </div>
+        </>
+      )}
+    </AnimatePresence>
   );
 };
