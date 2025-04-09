@@ -32,9 +32,9 @@ export const ProjectCard = ({ project, isFocused }: ProjectCardProps) => {
       <h3 className="text-3xl font-bold uppercase">{title}</h3>
       <ul className="flex gap-4">
         {tags.map((tag) => (
-          <span className="uppercase font-medium text-muted -mt-2" key={tag}>
-            {tag}
-          </span>
+          <li key={tag} className="-mt-2">
+            <span className="uppercase font-medium text-muted">{tag}</span>
+          </li>
         ))}
       </ul>
       <div className="flex gap-8 lg:hidden">

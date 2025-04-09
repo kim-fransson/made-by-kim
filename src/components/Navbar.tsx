@@ -6,14 +6,17 @@ const socialIcons = [
   {
     href: "https://github.com/kim-fransson",
     icon: <SiGithub size={20} />,
+    srLabel: "Checkout my github profile",
   },
   {
     href: "https://www.frontendmentor.io/profile/kim-fransson",
     icon: <SiFrontendmentor size={20} />,
+    srLabel: "Checkout my frontend mentor profile",
   },
   {
     href: "https://www.linkedin.com/in/kim-fransson-b714ba215/",
     icon: <SiLinkedin size={20} />,
+    srLabel: "Checkout my linkedin profile",
   },
 ];
 
@@ -28,10 +31,13 @@ export const Navbar = () => {
     >
       <h1 className="text-2xl">Made_By_Kim</h1>
       <ul className="flex justify-between w-full md:justify-end gap-4">
-        {socialIcons.map((item, index) => (
-          <Link key={index} intent="icon" href={item.href} target="_blank">
-            {item.icon}
-          </Link>
+        {socialIcons.map((item) => (
+          <li className="flex" key={item.href}>
+            <Link intent="icon" href={item.href} target="_blank">
+              {item.icon}
+              <span className="sr-only">{item.srLabel}</span>
+            </Link>
+          </li>
         ))}
       </ul>
     </nav>
