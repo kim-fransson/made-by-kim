@@ -9,7 +9,7 @@ import { tv, VariantProps } from "tailwind-variants";
 
 const link = tv({
   extend: focusRing,
-  base: "cursor-pointer text-center",
+  base: "cursor-pointer text-center -outline-offset-2",
   variants: {
     intent: {
       primary:

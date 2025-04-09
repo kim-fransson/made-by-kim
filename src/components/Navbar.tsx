@@ -1,22 +1,27 @@
+"use client";
+
 import { SiFrontendmentor, SiGithub, SiLinkedin } from "react-icons/si";
-import { Link } from "./ui";
+import { Link, TooltipTrigger } from "./ui";
 import { twJoin } from "tailwind-merge";
 
 const socialIcons = [
   {
     href: "https://github.com/kim-fransson",
     icon: <SiGithub size={20} />,
-    srLabel: "Checkout my github profile",
+    srLabel: "github",
+    tooltip: "Code and chaos inside.",
   },
   {
     href: "https://www.frontendmentor.io/profile/kim-fransson",
     icon: <SiFrontendmentor size={20} />,
-    srLabel: "Checkout my frontend mentor profile",
+    srLabel: "frontend mentor",
+    tooltip: "Where I turn figma into magic.",
   },
   {
     href: "https://www.linkedin.com/in/kim-fransson-b714ba215/",
     icon: <SiLinkedin size={20} />,
-    srLabel: "Checkout my linkedin profile",
+    srLabel: "linkedin",
+    tooltip: "Buzzwords and humblebrags inside.",
   },
 ];
 
@@ -33,10 +38,12 @@ export const Navbar = () => {
       <ul className="flex justify-between w-full md:justify-end gap-4">
         {socialIcons.map((item) => (
           <li className="flex" key={item.href}>
-            <Link intent="icon" href={item.href} target="_blank">
-              {item.icon}
-              <span className="sr-only">{item.srLabel}</span>
-            </Link>
+            <TooltipTrigger delay={300} tooltip={item.tooltip}>
+              <Link intent="icon" href={item.href} target="_blank">
+                {item.icon}
+                <span className="sr-only">{item.srLabel}</span>
+              </Link>
+            </TooltipTrigger>
           </li>
         ))}
       </ul>
