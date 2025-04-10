@@ -35,7 +35,7 @@ export const Navbar = () => {
       ])}
     >
       <h1 className="text-2xl">Made_By_Kim</h1>
-      <ul className="flex justify-between w-full md:justify-end gap-4">
+      <ul className="flex justify-between items-center w-full md:justify-end gap-4">
         {socialIcons.map((item) => (
           <li className="flex" key={item.href}>
             <TooltipTrigger

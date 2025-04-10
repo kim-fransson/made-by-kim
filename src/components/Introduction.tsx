@@ -1,5 +1,6 @@
 import { twJoin } from "tailwind-merge";
 import { ProfileImage } from "./ProfileImage";
+import { Link } from "./ui";
 
 export const Introduction = () => {
   const started = new Date("2018-09-01");
@@ -8,24 +9,27 @@ export const Introduction = () => {
 
   return (
     <div className={twJoin(["flex flex-col items-center", "md:flex-row"])}>
-      <ProfileImage className="md:order-2 md:-mr-4" />
-      <div>
+      <ProfileImage className="md:order-2 md:-mr-4 lg:mr-0" />
+      <div className="flex flex-col items-center md:items-start">
         <h2 className="text-4xl font-bold text-balance text-center mt-8 md:text-left md:text-6xl lg:text-7xl">
-          Thanks for stopping by! I&rsquo;m{" "}
+          Hello! I&rsquo;m{" "}
           <strong className="underline decoration-4 underline-offset-6 decoration-primary">
             Kim Fransson
           </strong>
           .
         </h2>
         <p className="text-center text-balance mt-6 md:text-left md:text-lg md:mt-12 lg:max-w-[445px]">
-          Detail-oriented frontend engineer with{" "}
+          Experienced frontend engineer with{" "}
           <strong className="underline decoration-2 underline-offset-6 decoration-primary">
             +{yearsOfExperience} years
           </strong>{" "}
-          of experience, including building applications from the backend side,
-          bringing expertise in both frontend and backend development to create
-          robust, end-to-end solutions.
+          of building apps and a solid mix of frontend and backend skills for
+          creating full-stack solutions.
         </p>
+
+        <Link className="mt-8 md:mt-12" intent="cta" href="/resume.pdf">
+          resume
+        </Link>
       </div>
     </div>
   );

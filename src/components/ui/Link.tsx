@@ -9,12 +9,15 @@ import { tv, VariantProps } from "tailwind-variants";
 
 const link = tv({
   extend: focusRing,
-  base: "cursor-pointer text-center -outline-offset-2",
+  base: "cursor-pointer text-center -outline-offset-2 inline-block",
   variants: {
     intent: {
       primary: [
-        "uppercase tracking-widest font-bold pointer-coarse:pb-2.5 pointer-coarse:px-0 pointer-coarse:pt-0 p-4 border-b-2 border-primary",
+        "uppercase inline-block tracking-widest font-bold pointer-coarse:pb-2.5 pointer-coarse:px-0 pointer-coarse:pt-0 py-4 border-b-2 border-primary",
         "hover:text-primary transition-colors",
+      ],
+      cta: [
+        "bg-primary text-foreground-primary px-5 py-2 text-center uppercase font-bold tracking-widest",
       ],
       icon: ["p-2.5 rounded-full"],
     },
@@ -31,11 +34,11 @@ interface LinkProps extends Omit<RACLinkProps, "children">, LinkVariants {
   children: React.ReactNode;
 }
 
-export const Link = ({ children, intent, ...props }: LinkProps) => {
+export const Link = ({ children, className, intent, ...props }: LinkProps) => {
   return (
     <RACLink
       {...props}
-      className={(renderProps) => link({ intent, ...renderProps })}
+      className={(renderProps) => link({ intent, className, ...renderProps })}
     >
       {children}
     </RACLink>
