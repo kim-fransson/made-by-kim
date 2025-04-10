@@ -12,17 +12,19 @@ export const Introduction = () => {
       <div>
         <h2 className="text-4xl font-bold text-balance text-center mt-8 md:text-left md:text-6xl lg:text-7xl">
           Thanks for stopping by! I&rsquo;m{" "}
-          <span className="underline decoration-4 underline-offset-6 decoration-primary">
+          <strong className="underline decoration-4 underline-offset-6 decoration-primary">
             Kim Fransson
-          </span>
+          </strong>
           .
         </h2>
         <p className="text-center text-balance mt-6 md:text-left md:text-lg md:mt-12 lg:max-w-[445px]">
           Detail-oriented frontend engineer with{" "}
-          <strong>+{yearsOfExperience} years</strong> of experience, including
-          building applications from the backend side, bringing expertise in
-          both frontend and backend development to create robust, end-to-end
-          solutions.
+          <strong className="underline decoration-2 underline-offset-6 decoration-primary">
+            +{yearsOfExperience} years
+          </strong>{" "}
+          of experience, including building applications from the backend side,
+          bringing expertise in both frontend and backend development to create
+          robust, end-to-end solutions.
         </p>
       </div>
     </div>
