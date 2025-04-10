@@ -52,7 +52,7 @@ export function ClientProviders({ children }: { children: ReactNode }) {
         className="relative w-full min-h-svh"
       >
         <motion.div
-          className="pointer-events-none fixed inset-0 z-0 lg:absolute"
+          className="pointer-events-none fixed pointer-coarse:hidden inset-0 z-0 lg:block lg:absolute"
           style={{ background }}
         />
         {children}
