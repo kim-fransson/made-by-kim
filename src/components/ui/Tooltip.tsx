@@ -26,7 +26,7 @@ const Tooltip = ({ children, ref, ...props }: TooltipProps) => {
     <RACTooltip
       {...props}
       ref={ref}
-      className="bg-background px-4 py-2 font-medium select-none border-b-2 border-primary grayscale-[1%]"
+      className="bg-background-100 px-4 py-2 font-medium select-none border-b-2 border-primary grayscale-[1%]"
     >
       {children}
     </RACTooltip>
