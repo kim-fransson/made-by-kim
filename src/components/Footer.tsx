@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="z-10 relative bg-background-200">
       <div className="flex flex-col px-4 py-12 items-center gap-2 md:flex-row md:justify-between max-w-5xl mx-auto">
-        <span className="font-bold">Made_By_Kim</span>
+        <span className="font-bold tracking-wider">Made_By_Kim</span>
         <ul className="flex gap-4">
           {socialIcons.map((item) => (
             <li className="flex" key={item.href}>

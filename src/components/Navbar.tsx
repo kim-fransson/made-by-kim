@@ -14,7 +14,7 @@ export const Navbar = () => {
         "lg:max-w-5xl lg:left-1/2 lg:-translate-x-1/2",
       ])}
     >
-      <h1 className="text-2xl">Made_By_Kim</h1>
+      <span className="text-2xl tracking-wider">Made_By_Kim</span>
       <ul className="flex justify-between items-center w-full md:justify-end gap-4">
         {socialIcons.map((item) => (
           <li className="flex" key={item.href}>
