@@ -1,8 +1,8 @@
 import { Project } from "@/projects";
 import Image from "next/image";
-import { Link } from "./ui";
 import { useHover } from "react-aria";
 import { AnimatePresence, motion } from "motion/react";
+import { PrimaryLink } from "./PrimaryLink";
 
 interface ProjectCardProps {
   project: Project;
@@ -41,12 +41,12 @@ export const ProjectCard = ({ project, isFocused }: ProjectCardProps) => {
         ))}
       </ul>
       <div className="flex gap-8 lg:hidden">
-        <Link intent="primary" href={website} target="_blank">
+        <PrimaryLink href={website} target="_blank">
           view project
-        </Link>
-        <Link intent="primary" href={github} target="_blank">
+        </PrimaryLink>
+        <PrimaryLink href={github} target="_blank">
           view code
-        </Link>
+        </PrimaryLink>
       </div>
     </article>
   );
@@ -58,7 +58,7 @@ interface ButtonOverlayProps {
   isOpen: boolean;
 }
 
-const MotionLink = motion.create(Link);
+const MotionLink = motion.create(PrimaryLink);
 
 const ButtonOverlay = ({ website, github, isOpen }: ButtonOverlayProps) => {
   return (
@@ -78,7 +78,6 @@ const ButtonOverlay = ({ website, github, isOpen }: ButtonOverlayProps) => {
               exit={{ opacity: 0 }}
               href={website}
               target="_blank"
-              intent="primary"
             >
               view project
             </MotionLink>
@@ -88,7 +87,6 @@ const ButtonOverlay = ({ website, github, isOpen }: ButtonOverlayProps) => {
               exit={{ opacity: 0 }}
               href={github}
               target="_blank"
-              intent="primary"
             >
               view code
             </MotionLink>

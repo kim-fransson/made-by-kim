@@ -1,4 +1,4 @@
-import { Link } from "./ui";
+import { CTALink } from "./CTALink";
 
 export const Introduction = () => {
   const started = new Date("2018-09-01");
@@ -16,9 +16,9 @@ export const Introduction = () => {
         mix of frontend and backend skills for creating full-stack solutions.
       </p>
 
-      <Link intent="cta" href="/resume.pdf" target="_blank">
+      <CTALink href="/resume.pdf" target="_blank">
         resume
-      </Link>
+      </CTALink>
     </section>
   );
 };

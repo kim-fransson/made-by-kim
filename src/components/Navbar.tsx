@@ -1,8 +1,9 @@
 "use client";
 
 import { socialIcons } from "@/social";
-import { Link, TooltipTrigger } from "./ui";
+import { TooltipTrigger } from "./ui";
 import { twJoin } from "tailwind-merge";
+import { IconLink } from "./IconLink";
 
 export const Navbar = () => {
   return (
@@ -22,10 +23,10 @@ export const Navbar = () => {
               closeDelay={1000}
               tooltip={item.tooltip}
             >
-              <Link intent="icon" href={item.href} target="_blank">
+              <IconLink href={item.href} target="_blank">
                 {item.icon}
                 <span className="sr-only">{item.srLabel}</span>
-              </Link>
+              </IconLink>
             </TooltipTrigger>
           </li>
         ))}

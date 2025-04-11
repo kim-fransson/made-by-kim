@@ -1,5 +1,6 @@
 import { socialIcons } from "@/social";
-import { Link, TooltipTrigger } from "./ui";
+import { TooltipTrigger } from "./ui";
+import { IconLink } from "./IconLink";
 
 export const Footer = () => {
   return (
@@ -14,10 +15,10 @@ export const Footer = () => {
                 closeDelay={1000}
                 tooltip={item.tooltip}
               >
-                <Link intent="icon" href={item.href} target="_blank">
+                <IconLink href={item.href} target="_blank">
                   {item.icon}
                   <span className="sr-only">{item.srLabel}</span>
-                </Link>
+                </IconLink>
               </TooltipTrigger>
             </li>
           ))}
