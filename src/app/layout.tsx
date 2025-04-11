@@ -13,7 +13,17 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Made By Kim",
-  description: "Welcome to my space",
+  description:
+    "Experienced frontend engineer with +6 years of building apps and a solid mix of frontend and backend skills for creating full-stack solutions.",
+  icons: {
+    icon: [
+      { url: "/favicons/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicons/favicon.ico", rel: "shortcut icon" },
+      { url: "/favicons/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/favicons/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

@@ -4,7 +4,7 @@ import { IconLink } from "./IconLink";
 
 export const Footer = () => {
   return (
-    <footer className="bg-background-200">
+    <footer className="z-10 relative bg-background-200">
       <div className="flex flex-col px-4 py-12 items-center gap-2 md:flex-row md:justify-between max-w-5xl mx-auto">
         <span className="font-bold">Made_By_Kim</span>
         <ul className="flex gap-4">
