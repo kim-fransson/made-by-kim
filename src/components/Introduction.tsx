@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { CornerRightDown, ExternalLink } from "lucide-react";
 import { CTALink } from "./CTALink";
 
 export const Introduction = () => {
@@ -17,10 +17,17 @@ export const Introduction = () => {
         mix of frontend and backend skills for creating full-stack solutions.
       </p>
 
-      <CTALink href="/resume.pdf" target="_blank">
-        resume
-        <ExternalLink size={20} />
-      </CTALink>
+      <div className="flex gap-8">
+        <CTALink href="/resume.pdf" target="_blank">
+          resume
+          <ExternalLink size={20} />
+        </CTALink>
+
+        <CTALink href="#projects">
+          projects
+          <CornerRightDown size={20} />
+        </CTALink>
+      </div>
     </section>
   );
 };

@@ -6,7 +6,7 @@ import { ProjectCard } from "./ProjectCard";
 
 export const ProjectList = () => {
   return (
-    <section className="space-y-12">
+    <section id="projects" className="space-y-12">
       <h2>Projects</h2>
       <GridList
         aria-label="My projects"

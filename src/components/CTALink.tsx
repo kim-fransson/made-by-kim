@@ -6,6 +6,7 @@ import { useHover } from "react-aria";
 
 export const CTALink = ({ children, ...props }: LinkProps) => {
   const { isHovered, hoverProps } = useHover({});
+  // const { isFocusVisible, focusProps } = useFocusRing();
   return (
     <div {...hoverProps} className="relative">
       <motion.div
@@ -16,6 +17,7 @@ export const CTALink = ({ children, ...props }: LinkProps) => {
       ></motion.div>
       <Link
         {...props}
+        // {...focusProps}
         className="text-center pointer-coarse:bg-primary pointer-coarse:text-foreground-primary uppercase font-bold tracking-widest py-3 px-5 relative mix-blend-difference flex items-center gap-2"
       >
         {children}
