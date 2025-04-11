@@ -6,7 +6,7 @@ export const Introduction = () => {
   const yearsOfExperience = now.getFullYear() - started.getFullYear() - 1;
 
   return (
-    <section className="mt-48 flex flex-col gap-10 justify-center items-center lg:mt-0 min-h-[50svh] md:min-h-[75svh] lg:min-h-svh ">
+    <section className="mt-48 flex flex-col gap-10 justify-center items-center lg:mt-0 min-h-svh ">
       <h1 className="text-balance text-center">
         Hello! I&rsquo;m <strong className="decoration-4">Kim Fransson</strong>.
       </h1>
