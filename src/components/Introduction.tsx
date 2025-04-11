@@ -1,5 +1,3 @@
-import { twJoin } from "tailwind-merge";
-import { ProfileImage } from "./ProfileImage";
 import { Link } from "./ui";
 
 export const Introduction = () => {
@@ -8,34 +6,19 @@ export const Introduction = () => {
   const yearsOfExperience = now.getFullYear() - started.getFullYear() - 1;
 
   return (
-    <div className={twJoin(["flex flex-col items-center", "md:flex-row"])}>
-      <ProfileImage className="md:order-2 md:-mr-4 lg:mr-0" />
-      <div className="flex flex-col items-center md:items-start">
-        <h2 className="text-balance text-center mt-8 md:text-left md:text-6xl lg:text-7xl">
-          Hello! I&rsquo;m{" "}
-          <strong className="underline decoration-4 underline-offset-6 decoration-primary">
-            Kim Fransson
-          </strong>
-          .
-        </h2>
-        <p className="text-center text-balance mt-6 md:text-left md:text-lg md:mt-12 lg:max-w-[445px]">
-          Experienced frontend engineer with{" "}
-          <strong className="underline decoration-2 underline-offset-6 decoration-primary">
-            +{yearsOfExperience} years
-          </strong>{" "}
-          of building apps and a solid mix of frontend and backend skills for
-          creating full-stack solutions.
-        </p>
+    <section className="mt-48 flex flex-col gap-10 justify-center items-center lg:mt-0 min-h-[50svh] md:min-h-[75svh] lg:min-h-svh ">
+      <h1 className="text-balance text-center">
+        Hello! I&rsquo;m <strong className="decoration-4">Kim Fransson</strong>.
+      </h1>
+      <p className="text-center text-balance">
+        Experienced frontend engineer with{" "}
+        <strong>+{yearsOfExperience} years</strong> of building apps and a solid
+        mix of frontend and backend skills for creating full-stack solutions.
+      </p>
 
-        <Link
-          className="mt-8 md:mt-12"
-          intent="cta"
-          href="/resume.pdf"
-          target="_blank"
-        >
-          resume
-        </Link>
-      </div>
-    </div>
+      <Link intent="cta" href="/resume.pdf" target="_blank">
+        resume
+      </Link>
+    </section>
   );
 };

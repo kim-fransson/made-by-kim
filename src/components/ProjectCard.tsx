@@ -32,7 +32,7 @@ export const ProjectCard = ({ project, isFocused }: ProjectCardProps) => {
           isOpen={showButtonOverlay}
         />
       </div>
-      <h3 className="text-3xl font-bold uppercase">{title}</h3>
+      <h3 className="uppercase">{title}</h3>
       <ul className="flex gap-4">
         {tags.map((tag) => (
           <li key={tag} className="-mt-2">
