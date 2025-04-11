@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react";
 import { CTALink } from "./CTALink";
 
 export const Introduction = () => {
@@ -18,6 +19,7 @@ export const Introduction = () => {
 
       <CTALink href="/resume.pdf" target="_blank">
         resume
+        <ExternalLink size={20} />
       </CTALink>
     </section>
   );
