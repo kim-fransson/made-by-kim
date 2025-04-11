@@ -10,12 +10,6 @@
   --muted: #d9d9d9;
 }
 
-/* If I want to create a more personal theme */
-/* [data-theme="personal"] {
-  --background: #171717;
-  --foreground: #ffffff;
-} */
-
 /* When defining theme variables that reference other variables, use the inline option: */
 @theme inline {
   --color-background: var(--background);
@@ -25,4 +19,10 @@
   --color-foreground-primary: var(--foreground-primary);
   --color-muted: var(--muted);
   --font-sans: var(--font-space-grotesk);
+}
+
+@layer base {
+  h2 {
+    @apply text-4xl lg:text-5xl font-bold;
+  }
 }

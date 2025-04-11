@@ -11,7 +11,7 @@ export const Introduction = () => {
     <div className={twJoin(["flex flex-col items-center", "md:flex-row"])}>
       <ProfileImage className="md:order-2 md:-mr-4 lg:mr-0" />
       <div className="flex flex-col items-center md:items-start">
-        <h2 className="text-4xl font-bold text-balance text-center mt-8 md:text-left md:text-6xl lg:text-7xl">
+        <h2 className="text-balance text-center mt-8 md:text-left md:text-6xl lg:text-7xl">
           Hello! I&rsquo;m{" "}
           <strong className="underline decoration-4 underline-offset-6 decoration-primary">
             Kim Fransson
@@ -27,7 +27,12 @@ export const Introduction = () => {
           creating full-stack solutions.
         </p>
 
-        <Link className="mt-8 md:mt-12" intent="cta" href="/resume.pdf">
+        <Link
+          className="mt-8 md:mt-12"
+          intent="cta"
+          href="/resume.pdf"
+          target="_blank"
+        >
           resume
         </Link>
       </div>

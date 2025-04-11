@@ -12,9 +12,7 @@ export default function Home() {
       <Separator />
 
       <section>
-        <h2 className="text-4xl lg:text-5xl font-bold text-balance mb-12">
-          Projects
-        </h2>
+        <h2 className="mb-12">Projects</h2>
         <ProjectList />
       </section>
     </div>
