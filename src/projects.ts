@@ -29,6 +29,13 @@ export const projects = [
     thumbnail: "/projects/tictactoe.png",
   },
   {
+    title: "Connect Four",
+    tags: ["react", "css", "storybook"],
+    website: "https://connect-four.made-by-kim.com/",
+    github: "https://github.com/kim-fransson/connect-four",
+    thumbnail: "/projects/connectFour.png",
+  },
+  {
     title: "FindMovies",
     tags: ["react", "tailwindcss", "storybook"],
     website: "https://findmovies.made-by-kim.com/",
